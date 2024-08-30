@@ -4,52 +4,42 @@ from datetime import date
 from django.contrib.auth.models import User
 from django import forms
 
-class Customer_register(models.Model):
-	contact = models.BigIntegerField()
-	gender  = models.CharField(max_length = 30)
-	dob     = models.DateField()
+class Physio_registration(models.Model):
 	address = models.TextField()
+	contact = models.BigIntegerField()
+	gender = models.CharField(max_length=10)
+	dob = models.DateField()
+	experience = models.CharField(max_length=20)
+	degree = models.CharField(max_length=20)
+	degree_reg_no = models.CharField(max_length=20)
 	state = models.ForeignKey(State_name, on_delete=models.CASCADE)
 	city = models.ForeignKey(City_name, on_delete=models.CASCADE)
 	area = models.ForeignKey(Area, on_delete=models.CASCADE)
-	customer_image = models.CharField(max_length=255,default='')
-	user    = models.OneToOneField(User, on_delete = models.CASCADE)
+	physio_image = models.CharField(max_length=255)
+	physio = models.OneToOneField(User, on_delete=models.CASCADE)
 	date = models.DateField(auto_now=True)
 
 	class Meta:
-		db_table = 'customer_register'
+		db_table = 'physio_registration'
 
-class Feedback(models.Model):
-	rating = models.CharField(max_length=10)
-	comment = models.TextField()
-	user = models.OneToOneField(User,on_delete=models.CASCADE)
-	date = models.DateField(default=date.today)
-
-	class Meta:
-		db_table = 'feedback'
-
-class Contact_us(models.Model):
-	name = models.CharField(max_length=30)
-	email = models.CharField(max_length=100)
-	contact = models.BigIntegerField()
-	subject = models.CharField(max_length=30)
-	message = models.TextField()
-	date = models.DateField(default=date.today)
-
-	class Meta:
-		db_table = 'contact_us'
-
-class Make_appointment(models.Model):
-	physio_clinic = models.ForeignKey(Physio_clinic,on_delete=models.CASCADE)
-	appointment_date = models.DateField()
-	time = models.CharField(max_length= 30)
-	remarks = models.TextField()
-	date = models.DateField(default=date.today)
-	customer = models.ForeignKey(Customer_register, on_delete=models.CASCADE)
+class Service(models.Model):
+	title = models.CharField(max_length=30)
+	description = models.TextField()
+	service_image = models.CharField(max_length=30)
+	price = models.DecimalField(max_digits=7, decimal_places=2)
+	duration = models.CharField(max_length=10)
 	physio = models.ForeignKey(User, on_delete=models.CASCADE)
-	status = models.CharField(max_length=30,default='pending')
-	reason = models.TextField()
 
 	class Meta:
-		db_table = 'make_appointment'
+		db_table = 'service'
 
+class Manage_physio(models.Model):
+	physio_clinic = models.ForeignKey(Physio_clinic,on_delete=models.CASCADE)
+	day = models.CharField(max_length=100)
+	fromtime = models.CharField(max_length=30)
+	totime = models.CharField(max_length=30)
+	fees = models.DecimalField(max_digits=7, decimal_places=2)
+	physio = models.ForeignKey(User, on_delete=models.CASCADE)
+
+	class Meta:
+		db_table = 'manage_physio'
