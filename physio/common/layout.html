@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dr PRO</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Dr PRO template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'physio/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+<link href="{% static 'physio/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'physio/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'physio/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'physio/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link href="{% static 'physio/plugins/jquery-datepicker/jquery-ui.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'physio/styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'physio/styles/responsive.css' %}">
+<link href="{% static 'physio/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'physio/css/font-awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'physio/css/style.css' %}" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+
+	{% include 'physio/common/header.html' %}
+
+	<!-- Menu -->
+
+	<div class="menu_overlay trans_400"></div>
+	<div class="menu trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<nav class="menu_nav">
+			<ul>
+				<li class="active"><a href="/physio/home">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Physio</a></li>
+					<li><a href="#">Contact</a></li>
+					<!-- <li><a href="#">Services</a></li> -->
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Registration</a></li>
+			</ul>
+		</nav>
+		<div class="menu_extra">
+			<div class="menu_link">Mo - Sat: 8:00am - 9:00pm</div>
+			<div class="menu_link">+34 586 778 8892</div>
+			<div class="menu_link"><a href="#">Make an appointment</a></div>
+		</div>
+		<div class="social menu_social">
+			<ul class="d-flex flex-row align-items-center justify-content-start">
+				<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Home -->
+
+	{% block content %}
+	
+	{% endblock %}
+
+	<!-- Intro -->
+
+
+
+	<!-- Footer -->
+
+	{% include 'physio/common/footer.html' %}
+</div>
+
+<script src="{% static 'physio/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'physio/styles/bootstrap-4.1.2/popper.js' %}"></script>
+<script src="{% static 'physio/styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+<script src="{% static 'physio/plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'physio/plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'physio/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'physio/plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'physio/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'physio/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'physio/plugins/easing/easing.js' %}"></script>
+<script src="{% static 'physio/plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'physio/plugins/jquery-datepicker/jquery-ui.js' %}"></script>
+<script src="{% static 'physio/js/custom.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

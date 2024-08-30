@@ -1,0 +1,39 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="container-fluid pt-4 px-4">
+     <div class="row g-4">
+                    <div class="col-12">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">All Feedback</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Rating</th>
+                                            <th scope="col">Comment</th>
+                                            <th scope="col">User Id</th>
+                                            <th scope="col">Date</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in feedback %}
+                                        <tr>
+                                        
+                                            <td>{{row.id}}</td>
+                                            <td>{{row.rating}}</td>
+                                            <td>{{row.comment}}</td>
+                                            <td>{{row.user.id}}</td>
+                                            <td>{{row.date}}</td>
+                                        </tr>
+                                        
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

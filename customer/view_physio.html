@@ -1,0 +1,129 @@
+{% extends 'customer/common/layout.html' %}
+{% block content %}
+<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-caption">
+                        <h2 class="page-title">Physio Details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="content">
+        <div class="container">
+            <h1>Physio Details</h1>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <img src="/media/physio_upload/{{physio.physio_image}}" alt="" height="300">
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                  <div>
+                    <h3>Details</h3>
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <th>Name :</th>
+                          <td>{{physio.physio.first_name}} {{physio.physio.last_name}}</td>
+                        </tr>
+                        <tr>
+                          <th>City :</th>
+                          <td>{{physio.city.cname}}</td>
+                        </tr>
+                        <tr>
+                          <th>Area :</th>
+                          <td>{{physio.area.area_name}}</td>
+                        </tr>
+                        <tr>
+                          <th>Address :</th>
+                          <td>{{physio.address}}</td>
+                        </tr>
+                        <tr>
+                          <th>Contact :</th>
+                          <td>{{physio.contact}}</td>
+                        </tr>
+                      </tbody>
+                    </table>    
+                  </div>
+
+                </div>
+            </div>
+            <div class="content">
+              <div class="row">
+                {% for s in services %} 
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-block">
+                        <!-- service block -->
+                        <div class="service-img mb20">
+                            <!-- service img -->
+                            <img src="/media/physio_upload/{{s.service_image}}" alt="" class="img-responsive">
+                        </div>
+                        <!-- service img -->
+                        <div class="service-content">
+                            <!-- service content -->
+                            <h2 class="justify-content">Title :{{s.title}}</h2>
+                            <h5 class="justify-content">Price :{{s.price}}</h5>
+                            <h5 class="justify-content">Duration :{{s.duration}}</h5>
+                            <h5 class="justify-content">Description :{{s.description}}</h5>                         
+                        </div>
+                        <!-- service content -->
+                    </div>
+                    <!-- /.service block -->
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="content">
+              <div class="container">
+                
+              <h1>clinic details</h1>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <table class="table table-responsive">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th class="text-center">clinic Name</th>
+                        <th class="text-center">Day</th>
+                        <th class="text-center">Time</th>
+                        <th class="text-center">Fees</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for c in clinic %}
+                      <tr>
+                        <td class="text-center">{{c.physio_clinic.physio_clinic}}</td>
+                        <td class="text-center">{{c.day}}</td>
+                        <td class="text-center">{{c.fromtime}} To {{c.totime}}</td>
+                        <td class="text-center">{{c.fees}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>              
+                <!-- <div class="widget widget-call-to-action col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <h1 class="widget-title">Book Your Appointment</h1>
+                  <p class="text-white">Call to action widget for booking appointment online.</p>
+                  <a href="/user/appointment/{{physio_id.id}}" class="btn btn-white btn-lg">Make An Appointment</a>
+                </div> -->
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="space-small bg-primary">
+        <!-- call to action -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+                    <h1 class="cta-title">Book your online appointment</h1>
+                    <p class="cta-text"> Call to action button example for booking appointment for patients.</p>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                    <a href="/customer/appointment/{{physio.physio.id}}" class="btn btn-white btn-lg mt20">Make Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

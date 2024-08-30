@@ -1,0 +1,36 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="container-fluid pt-4 px-4">
+<div class="col-sm-12 col-xl-6">
+<div class="bg-light rounded h-100 p-4">
+    <h6 class="mb-4">Add New City</h6>
+    <form method="post" action="/myadmin/city_update/{{result.id}}">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-3 col-form-label">City Name</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="cname" name="cname" value="{{result.cname}}">
+            </div>
+        </div>
+
+            <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-3 col-form-label">State Name</label>
+        <div class="col-sm-12">
+            <select class="form-select mb-3" aria-label="Default select example" id="s" name="s">
+                <option selected>Please Select State</option>
+                {% for row in state_name %}
+                <option value="{{row.id}}" {% if result.state_id == row.id %}selected {% endif %}>{{row.sname}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+        <!-- <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary">Cancel</button> -->
+        <input type="submit" name="submit" id="submit" value="Update" class="btn btn-primary">
+
+    </form>
+</div>
+     </div>
+</div>
+{% endblock %}

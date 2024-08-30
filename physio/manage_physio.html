@@ -1,0 +1,82 @@
+{% extends 'physio/common/layout.html' %}
+{% block content %}
+<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-caption">
+                        <h2 class="page-title">Manage Physio</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section class="login py-5 border-top-1 content">
+    
+
+        <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-8 align-item-center">
+                        <h1>Manage Physio</h1>
+                        <p> Please complete the form below. We'll do everything we can to respond to you as quickly as possible.</p>
+                        <form method="post" action="/physio/manage_physio_store" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label" for="title">Physio Clinic</label>
+                                    <select name="clinic" id="clinic"  class="form-control ng-invalid ng-invalid-required" ng-model="model.select" required="" style="height: 50px;">
+                                        <option value="Select a Hospital">Select a Clinic</option>
+                                        {% for row in result %}
+                                        <option value="{{row.id}}">{{row.physio_clinic}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="days">Days</label>
+                                    <div class="form-check form-check-inline form-control">
+                                        <label class="form-check-label">Mon</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch1" value="monday">
+                                        <label class="form-check-label">Tue</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch2" value="tuesday">
+                                        <label class="form-check-label">Wed</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch3" value="wednesday">
+                                        <label class="form-check-label">Thu</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch4" value="thursday">
+                                        <label class="form-check-label">Fri</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch5" value="friday">
+                                        <label class="form-check-label">Sat</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch6" value="saturday">
+                                        <label class="form-check-label">Sun</label>
+                                        <input class="form-check-input" type="checkbox" name="day[]" id="ch7" value="sunday">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="name">From time</label>
+                                    <input type="time" name="from" id="from" placeholder="" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="name">To time</label>
+                                    <input type="time" name="to" id="to" placeholder="" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="name">Fees</label>
+                                    <input type="text" name="fees" id="fees" placeholder="" class="form-control" required>
+                                </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-default">Submit</button>
+                                            
+                        </div>
+                    </div>
+
+                    </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+   </section>
+
+{% endblock %}

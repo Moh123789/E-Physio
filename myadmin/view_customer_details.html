@@ -1,0 +1,73 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+
+   <div class="col-md-12 graphs">
+     <div class="xs">
+     <h3>Customers</h3>
+    <div class="bs-example4" data-example-id="contextual-table">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td class="text-center">
+            <img src="/media/customer_upload/{{customer.customer_image}}" height="200" width="200">
+          </td>
+        </tr>
+        <tr class="active">
+          <th scope="row">User_id</th>
+          <td>{{customer.user_id}}</td>
+        </tr>
+        <tr>
+          <th scope="row">First Name</th>
+          <td>{{customer.user.first_name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Last Name</th>
+          <td>{{customer.user.last_name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Email</th>
+          <td>{{customer.user.email}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Username</th>
+          <td>{{customer.user.username}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Contact</th>
+          <td>{{customer.contact}}</td>
+        </tr>
+        <tr>
+          <th scope="row">DOB</th>
+          <td>{{customer.dob}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Gender</th>
+          <td>{{customer.gender}}</td>
+        </tr>
+        <tr>
+          <th scope="row">State</th>
+          <td>{{customer.state}}</td>
+        </tr>
+        <tr>
+          <th scope="row">City</th>
+          <td>{{customer.city}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Area</th>
+          <td>{{customer.area}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address</th>
+          <td>{{customer.address}}</td>
+        </tr>
+        <tr>
+          <th scope="row">date of join</th>
+          <td>{{customer.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+ </div>
+</div>
+
+{% endblock %}

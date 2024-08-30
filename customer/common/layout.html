@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>E PHYSIO</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Dr PRO template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'customer/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+<link href="{% static 'customer/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'customer/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'customer/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'customer/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link href="{% static 'customer/plugins/jquery-datepicker/jquery-ui.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'customer/styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'customer/styles/responsive.css' %}">
+<link href="{% static 'customer/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'customer/css/font-awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'customer/css/style.css' %}" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+
+
+	{% include 'customer/common/header.html' %}
+
+
+
+
+	<!-- Menu -->
+
+
+
+	<!-- Home -->
+
+	{% block content %}
+
+    {% endblock %}
+
+	<!-- Intro -->
+
+
+
+	<!-- Footer -->
+
+	{% include 'customer/common/footer.html' %}
+</div>
+
+<script src="{% static 'customer/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'customer/styles/bootstrap-4.1.2/popper.js' %}"></script>
+<script src="{% static 'customer/styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+<script src="{% static 'customer/plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'customer/plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'customer/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'customer/plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'customer/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'customer/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'customer/plugins/easing/easing.js' %}"></script>
+<script src="{% static 'customer/plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'customer/plugins/jquery-datepicker/jquery-ui.js' %}"></script>
+<script src="{% static 'customer/js/custom.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

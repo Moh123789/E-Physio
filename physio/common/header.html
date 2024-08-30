@@ -1,0 +1,91 @@
+<header class="header trans_400">
+		<div class="header_content d-flex flex-row align-items-center jusity-content-start trans_400">
+
+			<!-- Logo -->
+			<div class="logo">
+				<a href="#">
+					<div>E-<span>PHYSIO</span></div>
+					<div>Physiotherapy </div>
+				</a>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav">
+				<ul class="d-flex flex-row align-items-center justify-content-start">
+					<li class="active"><a href="/physio/home">Home</a></li>
+					<li><a href="/physio/manage_physio">Manage Clinic</a></li>
+
+					{% if request.user.is_authenticated %}
+
+					<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="services1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        	
+          <a class="dropdown-item" href="/physio/services">Add services</a>
+          
+          
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/physio/all_services">All services</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Appointment
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/physio/user_appointment">User Appointment</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/physio/my_apply_appointment">My Appointment</a>
+          </div>
+      </li>
+
+				
+					
+
+					<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/physio/edit_physio_details">Edit Profile</a>
+       
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/physio/physio_logout">Logout</a>
+        </div>
+      </li>
+      <div class="button button_1 header_button"><a href="/physio/my_apply_appointment">My  Appointment</a></div>
+       {% else %}
+
+				
+					<li><a href="/customer/contact">Contact</a></li>
+      <li><a href="/physio/physio_login">Login</a></li>
+					<li><a href="/physio/physio_registration">Registration</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+			<div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
+				
+				
+
+				
+
+				<!-- Appointment Button -->
+				<!-- <div class="button button_1 header_button"><a href="#">Make an Appointment</a></div> -->
+
+				<!-- Header Social -->
+				<!-- <div class="social header_social">
+					<ul class="d-flex flex-row align-items-center justify-content-start">
+						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					</ul>
+				</div> -->
+
+				<!-- Hamburger -->
+				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			</div>
+		</div>
+	</header>

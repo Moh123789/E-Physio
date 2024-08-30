@@ -1,0 +1,66 @@
+{% extends 'physio/common/layout.html' %}
+{% block content %}
+<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-caption">
+                        <h2 class="page-title">My Services</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="content">
+ <div class="container">
+    <h1>Services</h1>
+  <div class="row">
+    <div class="col-12">
+        <table class="table table-image">
+          <thead>
+            <tr>
+              <th scope="col" class="col-sm-2 text-center ">Image</th>
+              <th scope="col" class="text-center">Title</th>
+              <th scope="col" class="col-sm-2 text-center">Duration</th>
+              <th scope="col" class="text-center">Price</th>
+              <th scope="col"  class="col-sm-3 text-center">Description</th>
+              <th scope="col" class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in services %}
+            <tr>
+              <td class=" text-center" >
+                  <img src="/media/physio_upload/{{s.service_image}}" class="img-fluid img-thumbnail img-responsive" alt="Sheep" height="100%" width="100%" style="border-radius: 50%;">
+              </td>
+              <td style="vertical-align: middle;"  class="text-center">{{s.title}}</td>
+              <td style="vertical-align: middle;"  class="text-center">{{s.duration}}</td>
+              <td style="vertical-align: middle;"  class="text-center">{{s.price}}</td>
+              <td style="vertical-align: middle;"  class="text-center text-justify">{{s.description}}</td>
+              <td class="action text-center" data-title="Action" style="padding: 75px 0px 0px 20px;">
+                <div class="">
+                  <ul class="list-inline justify-content-center">
+                    <li class="list-inline-item">
+                      <a data-toggle="tooltip" data-placement="top" title="Edit" class="view" href="/physio/edit_services/{{s.id}}">
+                      <i class="fa fa-pencil"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item" style="margin-left: 15px;">
+                      <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="/physio/delete_services/{{s.id}}">
+                      <i class="fa fa-trash"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>   
+    </div>
+  </div>
+  </div>
+
+
+</div>
+
+{% endblock %}

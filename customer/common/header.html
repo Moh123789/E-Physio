@@ -1,0 +1,90 @@
+{% load static %}
+
+
+<header class="header trans_400">
+		<div class="header_content d-flex flex-row align-items-center jusity-content-start trans_400">
+
+			<!-- Logo -->
+			<div class="logo">
+				<a href="/customer/home">
+					<div>E-<span>PHYSIO</span></div>
+					<div>physiotherapy Surgery</div>
+				</a>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav">
+				<ul class="d-flex flex-row align-items-center justify-content-start">
+					<li class="active"><a href="/customer/home">Home</a></li>
+					<li><a href="/customer/about">About us</a></li>
+					<li><a href="/customer/physios">Physio</a></li>
+					{% if request.user.is_authenticated %}
+					<li><a href="/customer/my_appointment">My appointment</a></li>
+
+					<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        	
+          <a class="dropdown-item" href="/customer/customer_edit_profile">Edit profile</a>
+          
+          <a class="dropdown-item" href="/customer/feedback">Feedback</a>
+          <a class="dropdown-item" href="/customer/changepass">change password</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/customer/customer_logout">Logout</a>
+        </div>
+        
+      </li>
+      {% else %}
+					<li><a href="/customer/contact">Contact</a></li>
+					
+					<li><a href="/customer/customer_login">Login</a></li>
+					<li><a href="/customer/customer_registration">Registration</a></li>
+					
+					   {% endif %}
+
+				</ul>
+				
+			</nav>
+			<div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
+				
+				
+				
+
+				<!-- Appointment Button -->
+				<div class="button button_1 header_button"><a href="/customer/physios">Make an Appointment</a></div>
+
+			
+
+				<!-- Hamburger -->
+				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			</div>
+		</div>
+	</header>
+		<div class="menu_overlay trans_400"></div>
+	<div class="menu trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<nav class="menu_nav">
+			<ul>
+				<li class="active"><a href="/customer/home">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Physio</a></li>
+					<li><a href="#">Contact</a></li>
+					<!-- <li><a href="#">Services</a></li> -->
+					<li><a href="#">Login</a></li>
+					<li><a href="/customer/customer_registration">Registration</a></li>
+			</ul>
+		</nav>
+		<div class="menu_extra">
+			
+			<div class="menu_link"><a href="/customer/physios">Make an appointment</a></div>
+		</div>
+		<div class="social menu_social">
+			<ul class="d-flex flex-row align-items-center justify-content-start">
+				<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</div>

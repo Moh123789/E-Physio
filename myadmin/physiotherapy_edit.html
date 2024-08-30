@@ -1,0 +1,38 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="container-fluid pt-4 px-4">
+<div class="col-sm-12 col-xl-6">
+<div class="bg-light rounded h-100 p-4">
+    <h6 class="mb-4">Add Physiotherapy</h6>
+    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <img src="/media/myadmin_upload/{{result.clinic_image}}" height="300" width="300" style="border-radius: 50%;">
+                        </div>
+    <form method="post" action="/myadmin/physiotherapy_update/{{result.id}}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-3 col-form-label">Add physiotherapy</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="physiotherapy" name="physiotherapy" value="{{result.physio_clinic}}">
+            </div>
+        </div>
+        <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-6 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="address" name="address" style="height: 150px;">{{result.address}}</textarea>
+            </div>
+    </div>
+    <div class="mb-3">
+        <label for="formFileSm" class="form-label">Clinic Image.</label>
+            <input class="form-control form-control-sm" id="phimg" name="phimg" type="file">
+    </div>
+
+        <!-- <button type="submit" class="btn btn-primary" name="submit">Save</button> -->
+        <input type="submit" name="submit" id="submit" value="submit" class="btn btn-primary">
+
+    </form>
+</div>
+     </div>
+</div>
+{% endblock %}

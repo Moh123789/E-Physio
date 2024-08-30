@@ -1,0 +1,40 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="container-fluid pt-4 px-4">
+     <div class="row g-4">
+                    <div class="col-12">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">All Physio</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Physio_id</th>
+                                            <th scope="col">First_Name</th>
+                                            <th scope="col">Last_Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Physio Name</th>
+                                            <th scope="col">View Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                {% for row in physio %}
+                                        <tr>
+                                            <th scope="row">{{row.physio_id}}</th>
+                                            <td>{{row.physio.first_name}}</td>
+                                            <td>{{row.physio.last_name}}</td>
+                                            <td>{{row.physio.email}}</td>
+                                            <td>{{row.physio.username}}</td>
+                                            <td><a href="/myadmin/view_physio_details/{{row.id}}">View Details</a></td>
+                                            
+                        
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

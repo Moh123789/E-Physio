@@ -1,0 +1,52 @@
+{% extends 'customer/common/layout.html' %}
+{% block content %}
+<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-caption">
+                        <h2 class="page-title">My Appointments</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="content">
+<div class="container">
+    <h1>Appointment Details</h1>
+  <div class="row">
+    <div class="col-12">
+        <table class="table table-image">
+          <thead>
+            <tr>
+              <th scope="col" class="col-sm-2 text-center ">Image</th>
+              <th scope="col" class="text-center">Name</th>
+              <th scope="col" class="text-center">Parlour</th>
+              <th scope="col" class="col-sm-2 text-center">Appointment Date</th>
+              <th scope="col" class="text-center">Time</th>
+              <th scope="col" class="text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for a in result %}
+            <tr>
+              <td class=" text-center" >
+                  <img src="/media/physio_upload/{{a.physio.physio_registration.physio_image}}" class="img-fluid img-thumbnail img-responsive" alt="Sheep" height="100%" width="100%" style="border-radius: 50%;">
+              </td>
+              <td style="vertical-align: middle;"  class="text-center">{{a.physio.first_name}}</td>
+              <td style="vertical-align: middle;"  class="text-center">{{a.physio_clinic.physio_clinic}}</td>
+              <td style="vertical-align: middle;"  class="text-center">{{a.appointment_date}}</td>
+              <td style="vertical-align: middle;"  class="text-center">{{a.time}}</td>
+              <td style="vertical-align: middle;"  class="text-center">{{a.status}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>   
+    </div>
+  </div>
+</div>
+
+
+      </div>
+
+{% endblock %}

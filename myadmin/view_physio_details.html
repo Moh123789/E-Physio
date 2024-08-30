@@ -1,0 +1,85 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+
+   <div class="col-md-12 graphs">
+     <div class="xs">
+     <h3>Physio</h3>
+    <div class="bs-example4" data-example-id="contextual-table">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td class="text-center">
+            <img src="/media/physio_upload/{{physio.physio_image}}" height="200" width="200">
+          </td>
+        </tr>
+        <tr class="active">
+          <th scope="row">Physio_id</th>
+          <td>{{physio.physio_id}}</td>
+        </tr>
+        <tr>
+          <th scope="row">First Name</th>
+          <td>{{physio.physio.first_name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Last Name</th>
+          <td>{{physio.physio.last_name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Email</th>
+          <td>{{physio.physio.email}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Username</th>
+          <td>{{physio.physio.username}}</td>
+        </tr>
+        <tr>
+          <th scope="row">experience</th>
+          <td>{{physio.experience}}</td>
+        </tr>
+        <tr>
+          <th scope="row">degree</th>
+          <td>{{physio.degree}}</td>
+        </tr>
+        <tr>
+          <th scope="row">degree_reg_no</th>
+          <td>{{physio.degree_reg_no}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Contact</th>
+          <td>{{physio.contact}}</td>
+        </tr>
+        <tr>
+          <th scope="row">DOB</th>
+          <td>{{physio.dob}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Gender</th>
+          <td>{{physio.gender}}</td>
+        </tr>
+        <tr>
+          <th scope="row">State</th>
+          <td>{{physio.state}}</td>
+        </tr>
+        <tr>
+          <th scope="row">City</th>
+          <td>{{physio.city}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Area</th>
+          <td>{{physio.area}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address</th>
+          <td>{{physio.address}}</td>
+        </tr>
+        <tr>
+          <th scope="row">date of join</th>
+          <td>{{physio.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+ </div>
+</div>
+
+{% endblock %}

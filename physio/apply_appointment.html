@@ -1,0 +1,44 @@
+{% extends 'physio/common/layout.html' %}
+{% block content %}
+<div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-caption">
+                        <h2 class="page-title">Apply appointment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
+                        <h1>Apply Appointment</h1>
+                        <p> Please complete the form below. We'll do everything we can to respond to you as quickly as possible.</p>
+                       <form method="post" action="/physio/apply_appointment_store/{{appointment.id}}">
+                        <!-- <input type="hidden" name="appointment_id" id="appointment_id" value="{{appointment_id}}"> -->
+            {% csrf_token %}
+            <fieldset class="p-4">
+              
+              
+              <div class="form-group">
+                <label for="exampleInputFile">Apply</label>
+                  <select class="form-control mb-3" name="apply" id="apply" style="height: 50px;">
+                    <option value="approved" selected>Approved</option>
+                    <option value="reject">Reject</option>     
+                  </select>
+              </div>
+              <label for="exampleInputFile">Reason</label>
+              <textarea name="reason" id="reason" class="form-control mb-3 ng-invalid ng-invalid-required ng-valid-pattern ng-touched" rows="3" placeholder="Reason*"></textarea>
+                    
+              <button id="singlebutton" name="singlebutton" class="btn btn-default">Submit</button>
+            </fieldset>
+          </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+

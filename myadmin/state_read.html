@@ -1,0 +1,32 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="container-fluid pt-4 px-4">
+	 <div class="row g-4">
+                    <div class="col-12">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">State</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">State Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in result %}
+                <tr>
+                    <td>{{row.id}}</td>
+                    <td>{{row.sname}}</td>
+                    <td> <a href="">Delete</a></td>
+                    <td> <a href="">Edit</a> </td>
+                </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
